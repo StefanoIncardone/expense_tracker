@@ -28,15 +28,30 @@ require "php/scripts/accountSignin.php";
 			crossorigin="anonymous">
 		</script>
 
-		<link rel="stylesheet" href="css/style.css"/>
+		<!-- <link rel="stylesheet" href="css/style.css"/> -->
 	</head>
 
 	<body>
-		<?php require 'php/html_elements/header.php'; ?>
+		<header class="container-fluid bg-light fixed-top">
+			<nav class='navbar navbar-expand justify-content-center'>
+				<ul class='navbar-nav mr-auto'>
+					<li class='nav-item active'>
+						<a class='nav-link' href='index.php'>Home</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='login.php'>Log in</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 		
 		<main class="container-fluid my-5">
 			<section class="row justify-content-center">
-				<form class="col-8 pt-5 pb-5" method="POST" action="<?php echo( htmlspecialchars( $_SERVER[ "PHP_SELF" ] ) ); ?>">
+				<form
+					class="col-8 pt-5 pb-5"
+					method="POST"
+					action="<?php echo( htmlspecialchars( $_SERVER[ "PHP_SELF" ] ) ); ?>"
+				>
 					<div class="form-group p-2">
 						<input
 							type="text"
@@ -50,6 +65,7 @@ require "php/scripts/accountSignin.php";
 							required
 						>
 					</div>
+
 					<div class="form-group p-2">
 						<input
 							type="text"
@@ -63,6 +79,7 @@ require "php/scripts/accountSignin.php";
 							required
 						>
 					</div>
+
 					<div class="form-group p-2">
 						<input
 							type="email"
@@ -78,6 +95,7 @@ require "php/scripts/accountSignin.php";
 
 						<span class="text-danger"><?php echo( $accountAlreadyExistingErrMsg ); ?></span>
 					</div>
+
 					<div class="form-group p-2">
 						<input
 							type="password"
@@ -105,6 +123,14 @@ require "php/scripts/accountSignin.php";
 			</section>
 		</main>
 
-		<?php require 'php/html_elements/footer.php'; ?>
+		<footer class="container-fluid bg-light fixed-bottom">
+			<nav class='navbar navbar-expand justify-content-center'>
+				<ul class='navbar-nav mr-auto'>
+					<li class='nav-item active'>
+						<a class='nav-link' href='about_us.php'>About Us</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
 	</body>
 </html>

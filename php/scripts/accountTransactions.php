@@ -27,7 +27,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] === "POST" && !isInputEmpty() )
 			break;
 
 		case ReturnCodes::TRANSACTION_AMOUNT_SUCCESS:
-			header( "Location: http://localhost/onlineBankingProject/my_account.php", true, 301 );
+			header( "Location: my_account.php", true, 301 );
 			
 			$excecutionMessage = "Transaction executed succesfully";
 			break;

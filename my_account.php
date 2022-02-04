@@ -7,6 +7,8 @@ require "php/scripts/connectToDatabase.php";
 require "php/scripts/transactionVariables.php";
 require "php/scripts/accountTransactions.php";
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -133,7 +135,7 @@ require "php/scripts/accountTransactions.php";
 			<nav class='navbar navbar-expand justify-content-center'>
 				<ul class='navbar-nav mr-auto'>
 					<li class='nav-item active'>
-						<a class='nav-link' href='index.php'>Home</a>
+						<a class='nav-link' href='transaction_form.php'>New Transaction</a>
 					</li>
 					<li class='nav-item'>
 						<a class='nav-link' href='login.php'>Log out</a>
@@ -144,96 +146,50 @@ require "php/scripts/accountTransactions.php";
 
 		<main class="container-fluid my-5">
 			<section class="row justify-content-center">
-				<label class="col-auto my-3 p-3 border border-primary"><span class="h2 d-flex justify-content-center text-success">Incoming transactions:</span>
+				<label class="row my-3 p-3 border border-primary"><span class="h2 d-flex justify-content-center text-success">Incoming transactions:</span>
 					<div class="d-flex justify-content-center">
 						<label class="p-3"><span class="h4 p-2">Order by:</span>
-						<select
-							class="p-2 h6"
-							id="incoming-ordering-options"
-							name="amountOrderingOptions"
-							onchange="displayIncomingTransactionsTables()"
-						>
-							<?php require "php/html_elements/dropdownOrderingMenu.php"; ?>
-						</select>
+							<select
+								class="p-2 h6"
+								id="incoming-ordering-options"
+								name="amountOrderingOptions"
+								onchange="displayIncomingTransactionsTables()"
+							>
+								<?php require "php/html_elements/dropdownOrderingMenu.php"; ?>
+							</select>
 						</label>
 					</div>
 					
 					<div class="col d-flex justify-content-center" id="incoming-transactions-table"></div>
 				</label>
 
-				<label class="col-auto my-3 p-3 border border-primary"><span class="h2 d-flex justify-content-center text-danger">Outcoming transactions:</span>
+				<label class="row my-3 p-3 border border-primary"><span class="h2 d-flex justify-content-center text-danger">Outcoming transactions:</span>
 					<div class="d-flex justify-content-center">
 						<label class="p-3"><span class="h4 p-2">Order by:</span>
-						<select
-							class="p-2 h6"
-							id="outcoming-ordering-options"
-							name="dateOrderingOptions"
-							onchange="displayOutcomingTransactionsTables()"
-						>
-							<?php require "php/html_elements/dropdownOrderingMenu.php"; ?>
-						</select>
+							<select
+								class="p-2 h6"
+								id="outcoming-ordering-options"
+								name="dateOrderingOptions"
+								onchange="displayOutcomingTransactionsTables()"
+							>
+								<?php require "php/html_elements/dropdownOrderingMenu.php"; ?>
+							</select>
 						</label>
 					</div>
 
 					<div class="col d-flex justify-content-center" id="outcoming-transactions-table"></div>
 				</label>
 			</section>
-
-			<section class="row justify-content-center">
-				<form class="col-8 pt-5 pb-5" id="transaction-form" method="POST" action="<?php echo( htmlspecialchars( $_SERVER[ "PHP_SELF" ] ) ); ?>">
-					<div class="form-group p-2">
-						<input
-							type="number"
-							placeholder="Recipient ID"
-							min="1"
-							class="form-control"
-							id="recipient-input"
-							name="recipientId"
-							value="<?php echo( $_POST[ "recipientId" ] ); ?>"
-							required
-						>
-
-						<span class="text-danger"><?php echo( $recipientIdErrMsg ); ?></span>
-					</div>
-					<div class="form-group p-2">
-						<input
-							type="number"
-							placeholder="Amount"
-							min="1"
-							max="1000"
-							class="form-control"
-							id="amount-input"
-							name="amount"
-							value="<?php echo( $_POST[ "amount" ] ); ?>"
-							required
-						>
-
-						<span class="text-danger"><?php echo( $amountErrMsg ); ?></span>
-					</div>
-					<div class="form-group p-2">
-						<input
-							type="text"
-							placeholder="Message *"
-							minlength="0" 
-							maxlength="100"
-							class="form-control"
-							id="message-input"
-							name="message"
-							value="<?php echo( $_POST[ "message" ] ); ?>"
-						>
-
-						<span class="text-danger"><?php echo( $messageLengthErrMsg ); ?></span>
-					</div>
-
-					<span class="text-danger p-2">* Optional, Must be under 100 characters long</span>
-
-					<div class="form-group row justify-content-center p-2">
-						<input type="submit" class="col-auto btn btn-primary" value="Submit">
-					</div>
-
-					<span class="row justify-content-center text-success"><?php echo( $excecutionMessage ); ?></span>
-				</form>
-			</section>
 		</main>
+
+		<footer class="container-fluid bg-light fixed-bottom">
+			<nav class='navbar navbar-expand justify-content-center'>
+				<ul class='navbar-nav mr-auto'>
+					<li class='nav-item active'>
+						<a class='nav-link' href='about_us.php'>About Us</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
 	</body>
 </html>

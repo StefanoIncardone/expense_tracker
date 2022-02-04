@@ -17,7 +17,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] === "POST" && !isInputEmpty() )
 		case ReturnCodes::LOGIN_PASSWORD_CORRECT:
 			$_SESSION[ "loginId" ] = $connection->getSelectedValue();
 
-			header( "Location: http://localhost/onlineBankingProject/my_account.php", true, 301 );
+			header( "Location: my_account.php", true, 301 );
 			exit();
 
 		default:

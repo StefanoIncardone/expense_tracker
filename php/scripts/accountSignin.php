@@ -17,7 +17,7 @@ if( $_SERVER[ "REQUEST_METHOD" ] === "POST" && !isInputEmpty() )
 			break;
 
 		case ReturnCodes::SIGNIN_ACCOUNT_SUCCESS:
-			header( "Location: http://localhost/onlineBankingProject/index.php", true, 301 );
+			header( "Location: index.php", true, 301 );
 			exit();
 
 		default:

@@ -23,8 +23,17 @@
 	</head>
 
 	<body>
-		<?php require 'php/html_elements/header.php'; ?>
-		
-		<?php require 'php/html_elements/footer.php'; ?>
+		<header class="container-fluid bg-light fixed-top">
+			<nav class='navbar navbar-expand justify-content-center'>
+				<ul class='navbar-nav mr-auto'>
+					<li class='nav-item active'>
+						<a class='nav-link' href='index.php'>Home</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='login.php'>Log in</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 	</body>
 </html>
